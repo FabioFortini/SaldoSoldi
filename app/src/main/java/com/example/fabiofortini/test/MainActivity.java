@@ -16,7 +16,7 @@ import java.nio.charset.Charset;
 
 public class MainActivity extends AppCompatActivity {
 
-    protected Button b1;
+    protected Button movimento;
     protected TextView viewSaldoLarge;
     public static File fileSave;
 
@@ -24,33 +24,35 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        movimento = (Button) findViewById(R.id.button);
         viewSaldoLarge = (TextView) findViewById(R.id.saldo);
         try {
             fileSave = new File("./pippo.txt");
             System.out.println("==================== FILE CREATO IN TEORIA");
-            if (!fileSave.exists()) {
+            /*if (!fileSave.exists()) {
                 System.out.println("STO PER CREARE IL FILEEEEEEEEEE");
                 //fileSave.createNewFile();
                 //chiamo la saldo activity per inserire il saldo
                 Intent saldoActivity = new Intent(MainActivity.this, SaldoActivity.class);
                 startActivity(saldoActivity);
-            }
+            }*/
             FileInputStream fis = new FileInputStream(fileSave);
             InputStreamReader isr = new InputStreamReader(fis, Charset.forName("UTF-8"));
             BufferedReader br = new BufferedReader(isr);
             viewSaldoLarge.setText("Saldo: " + br.readLine());
         } catch (Exception e) {
             System.out.println(e);
-        };
+        }
+        double saldo=1000;
+        viewSaldoLarge.setText("Saldo: "+saldo);
 
-        /*b1 = (Button) findViewById(R.id.bpopup);
 
-        b1.setOnClickListener(new View.OnClickListener() {
+        movimento.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                b1.setText("Cliccato");
+                Intent movimentoActivity = new Intent(MainActivity.this, MovimentoActivity.class);
+                startActivity(movimentoActivity);
             }
-        });*/
+        });
 
     }
 

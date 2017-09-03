@@ -17,7 +17,7 @@
         android:layout_below="@+id/saldoAmount"
         android:layout_alignParentStart="true" />
     <EditText
-        android:inputType="numberDecimal"
+        android:inputType="text"
         android:id="@+id/saldoAmount"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
