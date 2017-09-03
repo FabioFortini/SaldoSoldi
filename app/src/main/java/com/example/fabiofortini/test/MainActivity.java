@@ -49,8 +49,8 @@ public class MainActivity extends AppCompatActivity {
 
         movimento.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent movimentoActivity = new Intent(MainActivity.this, MovimentoActivity.class);
-                startActivity(movimentoActivity);
+                    Intent movimentoActivity = new Intent(MainActivity.this, MovimentoActivity.class);
+                    startActivity(movimentoActivity);
             }
         });
 
